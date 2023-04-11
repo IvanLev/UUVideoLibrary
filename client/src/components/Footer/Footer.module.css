@@ -5,6 +5,10 @@
    align-items: center;
    display: grid;
    grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+   color: #fff;
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
  }
  
  @media (min-width: 550px) {

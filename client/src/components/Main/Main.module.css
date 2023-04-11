@@ -1,6 +1,16 @@
 .main {
    padding: 30px 15px;
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #333;
  }
+.contentTitle {
+  font-size: 40px;
+  line-height: 1;
+  margin: 0px 0px 50px 0px;
+  color: #fff;
+}
  
  @media (min-width: 992px) {
    .main {
@@ -45,4 +55,5 @@
   font-size: 20px;
   line-height: 28px;
   margin: 0px 0px 30px 0px;
+  text-decoration: none;
 }

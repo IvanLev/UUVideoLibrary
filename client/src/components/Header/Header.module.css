@@ -5,6 +5,9 @@
    align-items: center;
    display: grid;
    grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr ;
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
 .headerLogo img{
    width: 110px;
@@ -17,6 +20,7 @@
    display: grid;
    grid-auto-flow: column;
    justify-items: end;
+   list-style: none;
    /* justify-content: end; */
  }
  .headerList li {
