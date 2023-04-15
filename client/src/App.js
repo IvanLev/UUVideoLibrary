@@ -17,6 +17,7 @@ export const filmsInitialState = [
     name: 'Avengers: Endgame',
     url: 'https://www.youtube.com/embed/TcMBFSGVi1c',
     img: '/img/filmPreimage/avengers.jpg',
+    genre: 'smth',
     description: "After the devastating events of Мстители: Война бесконечности (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
   },
   {
@@ -24,6 +25,7 @@ export const filmsInitialState = [
     name: 'The Lord of the Rings: The Fellowship of the Ring',
     url: 'https://www.youtube.com/embed/V75dMMIW2B4',
     img: '/img/filmPreimage/LOTR.jpg',
+    genre: 'smth',
     description: 'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.'
   },
   {
@@ -31,6 +33,7 @@ export const filmsInitialState = [
     name: 'John Wick: Chapter 4',
     url: 'https://www.youtube.com/embed/yjRHZEUamCc',
     img: '/img/filmPreimage/JohnWick4.jpg',
+    genre: 'smth',
     description: 'John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.'
   },
   {
@@ -38,6 +41,7 @@ export const filmsInitialState = [
     name: 'Pirates of the Caribbean: The Curse of the Black Pearl',
     url: 'https://www.youtube.com/embed/naQr0uTrH_s',
     img: '/img/filmPreimage/pirates.jpg',
+    genre: 'smth',
     description: `Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governor's daughter, from Jack's former pirate allies, who are now undead.`
   }
 ];
