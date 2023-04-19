@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Tutorial",
+    "shortName": "tu",
+    "id": "f95a2f53e48e7d38"
+  },
+  {
+    "name": "Lecture",
+    "shortName": "le",
+    "id": "3f9e05bc4aaa380b"
+  },
+  {
+    "name": "Experiment",
+    "shortName": "ex",
+    "id": "0258b9979e055af1"
+  }
+]
