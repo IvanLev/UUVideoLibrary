@@ -50,7 +50,9 @@ async function LoadAbl(req, res) {
                 (genre) => video.genreId === genre.id
             );
 
-            res.json({ ...video, videoRating, videoGenre})
+            video.genre = videoGenre.name;
+
+            res.json({ ...video})
         } else {
             res.status(400).send({
                 errorMessage: "validation of input failed",

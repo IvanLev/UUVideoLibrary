@@ -2,21 +2,29 @@
   {
     "name": "Video1",
     "genreId": "3f9e05bc4aaa380b",
+    "videoId": "DOWDNBu9DkU",
+    "description": "Something interesting about video 1",
     "id": "84d4e4261f30a2e5"
   },
   {
     "name": "Video2",
     "genreId": "0258b9979e055af1",
+    "videoId": "2hXNd6x9sZs",
+    "description": "Something interesting about video 2",
     "id": "1e838cb06cfeb01c"
   },
   {
     "name": "Video3",
     "genreId": "3f9e05bc4aaa380b",
+    "videoId": "L576AckqIZg",
+    "description": "Something interesting about video 3",
     "id": "f780b198cf290778"
   },
   {
     "name": "Video4",
     "genreId": "f95a2f53e48e7d38",
+    "videoId": "q1ZmFc-sqNc",
+    "description": "Something interesting about video 4",
     "id": "3aa1b99e902f5175"
   }
 ]
