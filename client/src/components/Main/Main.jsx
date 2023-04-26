@@ -10,10 +10,10 @@ function Main({ filmList }) {
             <h1 className={s.contentTitle}>Title</h1>
             <div className={s.films}>
                {
-                  filmList.map(({ id, name, img }) => (
+                  filmList.map(({ id, name, videoId  }) => (
                      <div className={s.filmItem} key={id}>
                         <Link className={s.filmImage} to={AppRoute.FILMS + `/${id}`}>
-                           <img src={img} alt="Film" />
+                           <img src={`https://img.youtube.com/vi/${videoId}/0.jpg`} alt="YT"/>
                         </Link>
                         <Link className={s.filmName} to={AppRoute.FILMS + `/${id}`}>
                            {name}

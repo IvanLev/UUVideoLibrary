@@ -1,18 +1,23 @@
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { filmsInitialState } from '../../App';
+import { ApiPath } from '../../common/constants';
 
 import s from './FIlmDetails.module.css'
 
 function FilmDetails() {
    const { filmId } = useParams();
+   const [currentFilm, setCurrentFilm] = useState(null);
 
-   const currentFilm = filmsInitialState.find(({ id }) => id === filmId);
+   useEffect(() => {
+      fetch(ApiPath.videoById + filmId)
+         .then(res => res.json())
+         .then(body => setCurrentFilm(body))
+         .catch(error => console.log(error))
+   })
 
    if (!currentFilm) {
-      return (
-         <h1>Film not found</h1>
-      )
+      return null;
    }
 
    return (
@@ -22,7 +27,7 @@ function FilmDetails() {
             <div className={s.filmContent}>
                <iframe
                   className={s.filmFrame}
-                  src={currentFilm.url}
+                  src={`https://www.youtube.com/embed/${currentFilm.videoId}`}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
