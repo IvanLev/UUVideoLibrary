@@ -69,6 +69,7 @@ function Comments() {
       video_id: filmId,
       content: newComment
     }
+    setNewComment("");
     request(ApiPath.commentCreate, "POST", body)
       .then(res => setCommentList(state => state.concat([res])))
       .catch(e => console.log(e));
@@ -84,7 +85,7 @@ function Comments() {
     <>
       {user && (
         <>
-          <textarea onChange={handleTextareaOnChange} className={s.textarea}></textarea>
+          <textarea value={newComment} onChange={handleTextareaOnChange} className={s.textarea}></textarea>
           <button className={s.btn} onClick={createComment} disabled={!newComment}>leave a comment</button>
         </>
       )}
