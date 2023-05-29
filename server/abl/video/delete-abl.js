@@ -20,7 +20,7 @@ async function DeleteAbl(req, res) {
         if (valid) {
             const videoId = req.body.id;
             await dao.deleteVideo(videoId);
-            res.json({});
+            res.json({ video_id: videoId });
         } else {
             res.status(400).send({
                 errorMessage: "validation of input failed",

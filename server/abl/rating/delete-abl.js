@@ -8,9 +8,9 @@ let dao = new RatingDao(
 let schema = {
     type: "object",
     properties: {
-        id: { type: "string" },
+        video_id: { type: "string" },
     },
-    required: ["id"],
+    required: ["video_id"],
 };
 
 async function DeleteAbl(req, res) {
@@ -18,8 +18,8 @@ async function DeleteAbl(req, res) {
     const valid = ajv.validate(schema, req.body);
     try {
         if (valid) {
-            const ratingId = req.body.id;
-            await dao.deleteRating(ratingId);
+            const videoId = req.body.video_id;
+            await dao.deleteRating(videoId);
             res.json({});
         } else {
             res.status(400).send({

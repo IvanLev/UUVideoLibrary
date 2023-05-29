@@ -1,49 +1,68 @@
-import { useReducer, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { AppRoute, ApiPath } from './common/constants';
-import { filmsReducer } from './reducer/reducer';
+import { ApiPath, AppRoute } from './common/constants';
+import { ContextProvider, VideoContext } from './context/context';
 
-import LandingPage from './pages/LandingPage';
-import Main from './components/Main/Main';
 import About from './components/About/About';
 import FilmDetails from './components/FilmDetails/FilmDetails';
+import Main from './components/Main/Main';
+import Auth from './pages/Auth/Auth';
+import LandingPage from './pages/LandingPage/LandingPage';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/SignUp/SignUp';
+import { useHttp } from './hooks/hooks';
 
-export let filmsInitialState = [];
+
+export let videoInitialState = {
+  list: [],
+  lastNum: 0,
+  filter: {
+    genre: "all",
+    search: ""
+  }
+};
 
 function App() {
-  const [films, dispatch] = useReducer(filmsReducer, filmsInitialState);
+  const { request } = useHttp()
+  const [video, setVideo] = useState(videoInitialState);
 
   useEffect(() => {
-    fetch(ApiPath.videoList)
-      .then(res => res.json())
-      .then(body => { 
-        dispatch({ type: 'fetch_success', payload: body });
-        filmsInitialState = body;
-      })
+    request(`${ApiPath.videoList}?count=10`)
+      .then(body => setVideo(state => ({ ...state, ...body })))
       .catch(error => console.log(error))
   }, [])
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={AppRoute.MAIN} element={
-          <LandingPage dispatch={dispatch} />
-        }>
-          <Route index element={<Main filmList={films} />} />
-          <Route path={AppRoute.FILMS + AppRoute.$ID} element={<FilmDetails />} />
-        </Route>
-        <Route path={AppRoute.ABOUT} element={
-          <LandingPage dispatch={dispatch} />
-        }>
-          <Route index element={<About />} />
-        </Route>
-        <Route path={AppRoute.NOT_FOUND} element={<Navigate to={AppRoute.MAIN} />} />
-      </Routes>
-    </BrowserRouter>
+    <ContextProvider>
+      <VideoContext.Provider value={{ video, setVideo }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path={AppRoute.MAIN} element={
+              <LandingPage />
+            }>
+              <Route index element={<Main />} />
+              <Route path={AppRoute.FILMS + AppRoute.$ID} element={<FilmDetails />} />
+            </Route>
+            <Route path={AppRoute.ABOUT} element={
+              <LandingPage />
+            }>
+              <Route index element={<About />} />
+            </Route>
+            <Route path={AppRoute.SIGN_IN} element={<Auth title="sign in" />}>
+              <Route index element={<SignIn />} />
+            </Route>
+            <Route path={AppRoute.SIGN_UP} element={<Auth title="sign up" />}>
+              <Route index element={<SignUp />} />
+            </Route>
+            <Route path={AppRoute.NOT_FOUND} element={<Navigate to={AppRoute.MAIN} />} />
+          </Routes>
+        </BrowserRouter>
+      </VideoContext.Provider>
+    </ContextProvider>
   );
 }
 

@@ -1,8 +1,8 @@
 import React from "react";
-import s from './Footer.module.css'
+import s from './Footer.module.css';
 
-function Footer(){
-   return(
+function Footer() {
+   return (
       <footer className={s.footer}>
          <div className={s.footerCopy}>
             Copyrights, 2023

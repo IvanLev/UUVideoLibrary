@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import {
@@ -10,40 +10,73 @@ import {
    NavDropdown
 } from 'react-bootstrap';
 
-import { AppRoute, ApiPath } from '../../common/constants';
 
+import { ApiPath, AppRoute } from '../../common/constants';
+
+import { PopupContex, UserContext, VideoContext } from '../../context/context';
+import { useHttp } from '../../hooks/hooks';
 import s from './Header.module.css';
 
-function Header({ dispatch }) {
+function Header() {
+   const { request } = useHttp();
    const [genreList, setGenreList] = useState([]);
    const [searchValue, setSearchValue] = useState('');
+   const { user, saveUser } = useContext(UserContext);
+   const { video, setVideo } = useContext(VideoContext);
+   const { setPopupContext } = useContext(PopupContex);
+
+   const avatar = user?.imgPath ? `/images/${user.imgPath}` : `/img/user-img.webp`;
 
    useEffect(() => {
-      fetch(ApiPath.genreList)
-         .then(res => res.json())
+      request(ApiPath.genreList)
          .then(body => setGenreList(body))
          .catch(error => console.log(error))
-   },[])
+   }, [])
 
    const handleChange = (e) => {
-      if (!e.target.value) dispatch({ type: '' });
+      if (!e.target.value) {
+         setVideo(state => ({ ...state, filter: { ...state.filter, search: '' } }))
+         sendFilterRequest('', video.filter.genre);
+      }
       setSearchValue(e.target.value);
    }
 
+   const sendFilterRequest = (search, genre) => {
+      let params = new URLSearchParams(window.location.search);
+      params.set('genre', genre);
+      params.set('search', search);
+      params.set('count', 10);
+      request(`${ApiPath.videoList}?${params}`)
+         .then(res => setVideo(state => ({ ...state, ...res, filter: { search, genre } })))
+         .catch(e => console.log(e));
+   }
+
+
+
    const handleSearchClick = () => {
-      dispatch({ type: 'searching', value: searchValue });
+      sendFilterRequest(searchValue, video.filter.genre);
    }
 
    const handleFilterClick = (eventKey) => {
-      if(eventKey === "all") {   
-         dispatch({})
-      } else {
-         dispatch({ type: 'filter_by_genre', payload: eventKey })
-      }
+      sendFilterRequest(video.filter.search, eventKey);
    }
 
    const handleResetFilterClick = () => {
-      dispatch({})
+      sendFilterRequest('', 'all');
+   }
+
+   const handleLogOut = () => {
+      saveUser(null)
+   }
+
+   const openPopup = (e) => {
+      const field = e.target.name;
+      setPopupContext(state => ({ isOpen: true, activeComponent: field }))
+   }
+
+   const openEditProfile = (e) => {
+      const field = e.currentTarget.id;
+      setPopupContext(state => ({ isOpen: true, activeComponent: field }))
    }
 
    return (
@@ -65,19 +98,25 @@ function Header({ dispatch }) {
                   </LinkContainer>
                   <NavDropdown title="Genres" id="basic-nav-dropdown" onSelect={handleFilterClick}>
                      <NavDropdown.Item eventKey="all">All</NavDropdown.Item>
-                     {genreList.map(({name, id}) => (
+                     {genreList.map(({ name, id }) => (
                         <NavDropdown.Item eventKey={id} key={id}>{name}</NavDropdown.Item>
                      ))}
-                     {/* <NavDropdown.Item eventKey="programming">
-                        Programming
-                     </NavDropdown.Item>
-                     <NavDropdown.Item eventKey="language">
-                        Language
-                     </NavDropdown.Item>
-                     <NavDropdown.Item eventKey="guides">
-                        Guides
-                     </NavDropdown.Item> */}
                   </NavDropdown>
+                  {user ? (
+                     <LinkContainer to={AppRoute.MAIN} onClick={handleLogOut}>
+                        <Nav.Link>Log out</Nav.Link>
+                     </LinkContainer>
+                  ) : (
+                     <>
+                        <LinkContainer to={AppRoute.SIGN_IN}>
+                           <Nav.Link>Sign In</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to={AppRoute.SIGN_UP}>
+                           <Nav.Link>Sign Up</Nav.Link>
+                        </LinkContainer>
+                     </>
+                  )}
+
                </Nav>
                <Form className="d-flex">
                   <Form.Control
@@ -95,6 +134,32 @@ function Header({ dispatch }) {
                      Search
                   </Button>
                </Form>
+               {user?.role === "content creator" && (
+                  <Button
+                     className={s.uploadBtn}
+                     name="upload"
+                     variant="success"
+                     onClick={openPopup}
+                  >
+                     upload video
+                  </Button>
+               )}
+               {user?.role === "admin" && (
+                  <Button
+                     className={s.uploadBtn}
+                     name="verification"
+                     variant="success"
+                     onClick={openPopup}
+                  >
+                     verification
+                  </Button>
+               )}
+
+               {user && (
+                  <div className={s.avatarWrapper} id="edit" onClick={openEditProfile}>
+                     <img src={avatar} alt="avatar" />
+                  </div>
+               )}
             </Navbar.Collapse>
          </Container>
       </Navbar>

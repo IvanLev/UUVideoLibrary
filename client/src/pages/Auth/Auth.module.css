@@ -1,0 +1,21 @@
+.wrapper {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.popup {
+  padding: 15px 40px;
+  width: 400px;
+  background-color: #D2691E;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}

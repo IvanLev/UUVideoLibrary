@@ -1,0 +1,27 @@
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0, .5);
+}
+
+.popup {
+  width: 100vw;
+  margin-right: 15px;
+  margin-left: 15px;
+  max-width: 600px;
+  position: relative;
+  padding: 20px;
+  background-color: #D2691E;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}

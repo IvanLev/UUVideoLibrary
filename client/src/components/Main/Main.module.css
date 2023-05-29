@@ -5,11 +5,34 @@
  line-height: 24px;
  background-color: #333;
 }
+
+.name {
+  display: flex;
+  justify-content: space-between;
+}
+
 .contentTitle {
  font-size: 40px;
  line-height: 1;
  margin: 0px 0px 50px 0px;
  color: #fff;
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.loadBtn {
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #D2691E;
 }
 
 @media (min-width: 992px) {
@@ -32,12 +55,14 @@
  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
  /* grid-auto-rows: 1fr; */
 }
+
 .filmItem {
  display: grid;
  grid-auto-flow: row;
- grid-template: auto 1fr minmax(40px, auto) / 1fr;
+ grid-template: auto 1fr minmax(140px, auto) / 1fr;
 }
 .filmImage {
+  overflow: hidden;
  position: relative;
  padding: 0px 0px 90% 0px;
  margin: 0px 0px 20px 0px;
@@ -57,4 +82,22 @@
  line-height: 28px;
  margin: 0px 0px 30px 0px;
  text-decoration: none;
+}
+
+.rating {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.ratingWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
 }

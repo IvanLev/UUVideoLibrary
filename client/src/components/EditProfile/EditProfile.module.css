@@ -1,0 +1,66 @@
+.form {
+  width: 100%;
+}
+
+.title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.submit {
+  padding: 5px 30px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.avatar {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.avatar:hover > .uploadIcon {
+  top: 0;
+}
+
+.avatar > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.uploadIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .5);
+  transition: all 0.5s ease;
+}
+.labelFile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file {
+  display: none;
+}
+
+.error {
+  display: block;
+  margin-bottom: 15px;
+  color: #800000;
+}

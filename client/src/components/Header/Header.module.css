@@ -1,3 +1,35 @@
 .header{
   background-color: #D2691E;
 }
+
+.uploadBtn {
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+.avatarWrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.avatarWrapper > img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .uploadBtn {
+    margin-left: 0;
+    margin-top: 15px;
+    text-transform: uppercase;
+  }
+
+  .avatarWrapper {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}

@@ -8,24 +8,24 @@ let dao = new RatingDao(
 let schema = {
     type: "object",
     properties: {
-        id: { type: "string" },
+        video_id: { type: "string" },
     },
-    required: ["id"],
+    required: ["video_id"],
 };
 
 async function GetAbl(req, res) {
     try {
         const ajv = new Ajv();
-        const body = req.query.id ? req.query : req.body;
+        const body = req.query.video_id ? req.query : req.body;
 
         const valid = ajv.validate(schema, body);
         if (valid) {
-            const ratingId = body.id;
-            const rating = await dao.getRating(ratingId);
+            const videoId = body.video_id;
+            const rating = await dao.getRating(videoId);
             if (!rating) {
                 res
                     .status(400)
-                    .send({ error: `classroom with id '${ratingId}' doesn't exist` });
+                    .send({ error: `classroom with id '${videoId}' doesn't exist` });
             }
             res.json(rating);
         } else {

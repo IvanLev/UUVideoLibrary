@@ -8,9 +8,9 @@ let dao = new RatingDao(
 let schema = {
     type: "object",
     properties: {
-        name: { type: "string" },
+        video_id: { type: "string" },
     },
-    required: ["name"],
+    required: ["video_id"],
 };
 
 async function CreateAbl(req, res) {
@@ -19,6 +19,9 @@ async function CreateAbl(req, res) {
         const valid = ajv.validate(schema, req.body);
         if (valid) {
             let rating = req.body;
+            rating.likes = 0;
+            rating.dislikes = 0;
+            rating.rating = 0;
             rating = await dao.createRating(rating);
             res.json(rating);
         } else {

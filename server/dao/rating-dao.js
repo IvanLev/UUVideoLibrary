@@ -22,9 +22,9 @@ class RatingsDao {
         return rating;
     }
 
-    async getRating(id) {
+    async getRating(videoId) {
         let ratinglist = await this._loadAllRatings();
-        const result = ratinglist.find((b) => b.id === id);
+        const result = ratinglist.find((b) => b.video_id === videoId);
         return result;
     }
 
@@ -43,9 +43,9 @@ class RatingsDao {
         return ratinglist[ratingIndex];
     }
 
-    async deleteRating(id) {
+    async deleteRating(video_id) {
         let ratinglist = await this._loadAllRatings();
-        const ratingIndex = ratinglist.findIndex((b) => b.id === id);
+        const ratingIndex = ratinglist.findIndex((b) => b.video_id === video_id);
         if (ratingIndex >= 0) {
             ratinglist.splice(ratingIndex, 1);
         }

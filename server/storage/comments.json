@@ -1,0 +1,18 @@
+[
+  {
+    "author": "John Smith",
+    "video_id": "1e838cb06cfeb01c",
+    "content": "New comment!",
+    "id": "0f21e7c5b64b1b3c",
+    "likes": 2,
+    "dislikes": 1
+  },
+  {
+    "author": "Born Born",
+    "video_id": "1e838cb06cfeb01c",
+    "content": "Hello world",
+    "id": "35de88d215c5520c",
+    "likes": 2,
+    "dislikes": 0
+  }
+]

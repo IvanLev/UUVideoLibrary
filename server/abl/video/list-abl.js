@@ -6,7 +6,10 @@ let dao = new VideoDao(
 
 async function ListAbl(req, res) {
     try {
-        const videoList = await dao.listVideos();
+        let { genre, search, count } = req.query;
+        genre = genre || "all";
+        search = search || "";
+        const videoList = await dao.filterVideos(genre, search, count);
         res.json(videoList);
     } catch (e) {
         console.log(e);

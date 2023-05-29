@@ -12,6 +12,10 @@
  color: #fff;
 }
 
+.commentTitle {
+  color:  #fff;
+}
+
 @media (min-width: 992px) {
   .main {
     grid-area: main;

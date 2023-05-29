@@ -9,7 +9,9 @@ let schema = {
     type: "object",
     properties: {
         id: { type: "string" },
-        name: { type: "string" },
+        rating: { type: "number" },
+        likes: { type: "number" },
+        dislikes: { type: "number" }
     },
     required: ["id"],
 };

@@ -73,6 +73,20 @@ class VideoDao {
         return videoList;
     }
 
+    async filterVideos( genre, search, count ) {
+        const searchLower = search.toLowerCase();
+        let videoList = await this._loadAllVideos();
+        let filterVideoList = videoList.filter(item => {
+            if(genre === "all") {
+                return item.name.toLowerCase().includes(searchLower);
+            } else {
+                return item.name.toLowerCase().includes(searchLower) && item.genreId === genre;
+            }
+        })
+        filterVideoList = filterVideoList.slice(0, count);
+        return { list: filterVideoList, lastNum: videoList.length };
+    }
+
     async _loadAllVideos() {
         let videoList;
         try {

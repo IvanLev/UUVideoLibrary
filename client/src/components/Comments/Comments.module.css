@@ -1,0 +1,44 @@
+.commentList {
+  padding: 0;
+  margin: 0;
+}
+
+.commentItem {
+  background-color: #fff;
+  list-style: none;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.commentAuthor {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.likes, .dislikes {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 35px;
+}
+
+.icon {
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  resize: none;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #D2691E;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+}
+

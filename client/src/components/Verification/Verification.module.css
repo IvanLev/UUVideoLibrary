@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.verificationList {
+  margin: 0;
+  padding: 0;
+}
+
+.verificationItem {
+  background-color: #fff;
+  margin: 0 0 10px 0;
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.verificationItem:hover {
+  border: 2px solid #0000ff;
+}
+
+.verificationWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}

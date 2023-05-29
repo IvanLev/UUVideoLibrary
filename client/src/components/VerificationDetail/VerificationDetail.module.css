@@ -1,0 +1,88 @@
+.title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  width: 500px;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.data, .description {
+  padding: 10px;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+.creator {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.description {
+  min-height: 44px;
+}
+
+.btnAccept, .btnDecline {
+  padding: 7px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.btnAccept {
+  margin-left: 20px;
+  background-color: #00ff00;
+}
+
+.btnDecline {
+  margin-left: auto;
+  background-color: #ff0000;
+}
+
+.field:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+/* .verificationList {
+  margin: 0;
+  padding: 0;
+  width: 600px;
+}
+
+.verificationItem {
+  background-color: #fff;
+  margin: 0 0 10px 0;
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.verificationItem:hover {
+  border: 2px solid #0000ff;
+}
+
+.verificationWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+} */

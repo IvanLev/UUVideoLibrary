@@ -9,8 +9,12 @@ let schema = {
     type: "object",
     properties: {
         name: { type: "string" },
+        genreId: { type: "string" },
+        videoLink: { type: "string" },
+        description: { type: "string" },
+        preview: { type: "string" },
     },
-    required: ["name"],
+    required: ["name", "genreId", "videoLink", "description", "preview"],
 };
 
 async function CreateAbl(req, res) {
@@ -20,6 +24,7 @@ async function CreateAbl(req, res) {
         if (valid) {
             let video = req.body;
             video = await dao.createVideo(video);
+            const video_id = video.id
             res.json(video);
         } else {
             res.status(400).send({

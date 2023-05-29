@@ -1,0 +1,114 @@
+[
+  {
+    "imgPath": "",
+    "firstName": "John",
+    "lastName": "Smith",
+    "login": "smith@gmail.com",
+    "password": "12345678",
+    "id": "d30a5c16a91e5bfb",
+    "role": "content creator",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkMzBhNWMxNmE5MWU1YmZiIiwiaWF0IjoxNjg0NDg2NTE3LCJleHAiOjE2ODY1NjAxMTd9.np1YGYibYyLQnD5r9hO7cWAflwCjnKyE6nzzA3pac8Q",
+    "comments": {
+      "likes": [
+        "0f21e7c5b64b1b3c"
+      ],
+      "dislikes": []
+    },
+    "films": {
+      "likes": [],
+      "dislikes": []
+    }
+  },
+  {
+    "imgPath": "",
+    "firstName": "Bob",
+    "lastName": "Billy",
+    "login": "bob@gmail.com",
+    "password": "12345678",
+    "id": "80387ebdc87daa43",
+    "role": "content creator",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDM4N2ViZGM4N2RhYTQzIiwiaWF0IjoxNjg0NDg2NTYxLCJleHAiOjE2ODY1NjAxNjF9.EeXIqMay1Hec8C1cnp5eKrkAI0UrTE7nFA7CifL_RTk",
+    "comments": {
+      "likes": [],
+      "dislikes": [
+        "0f21e7c5b64b1b3c"
+      ]
+    },
+    "films": {
+      "likes": [],
+      "dislikes": []
+    }
+  },
+  {
+    "imgPath": "",
+    "firstName": "Born",
+    "lastName": "Born",
+    "login": "born@gmail.com",
+    "password": "12345678",
+    "id": "34c86452b355d311",
+    "role": "content creator",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNGM4NjQ1MmIzNTVkMzExIiwiaWF0IjoxNjg1MzUzMTY0LCJleHAiOjE2ODc0MjY3NjR9.-UZdid9NKQuFzGuNRpNYFhNjSKMegNT7ecKp8wiOQZ8",
+    "comments": {
+      "likes": [],
+      "dislikes": []
+    },
+    "films": {
+      "likes": [],
+      "dislikes": []
+    }
+  },
+  {
+    "imgPath": "",
+    "firstName": "Robert",
+    "lastName": "Braun",
+    "login": "robert@gmail.com",
+    "password": "12345678",
+    "id": "a9cd4409e3b584d2",
+    "role": "content creator",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOWNkNDQwOWUzYjU4NGQyIiwiaWF0IjoxNjg0NTc3NjI2LCJleHAiOjE2ODY2NTEyMjZ9.TOpg5D6zU59YiLhWfHvIkLw51uIIthDRbW1FPceZBL8",
+    "comments": {
+      "likes": [],
+      "dislikes": []
+    },
+    "films": {
+      "likes": [],
+      "dislikes": []
+    }
+  },
+  {
+    "imgPath": "1684611634517.jpg",
+    "firstName": "Admin",
+    "lastName": "Admin",
+    "login": "admin@gmail.com",
+    "password": "adminadmin",
+    "id": "34532716be1e93b5",
+    "role": "admin",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNDUzMjcxNmJlMWU5M2I1IiwiaWF0IjoxNjg1MzUzMDY2LCJleHAiOjE2ODc0MjY2NjZ9.1dDEko5_RwF0DqWUF7NqGHUF-CP1-UDHf7FqcEAcs8M",
+    "comments": {
+      "likes": [],
+      "dislikes": []
+    },
+    "films": {
+      "likes": [],
+      "dislikes": []
+    }
+  },
+  {
+    "firstName": "Test",
+    "lastName": "Test",
+    "login": "test@gmail.com",
+    "password": "testtest",
+    "id": "d7a4ab5bb25ab5f3",
+    "role": "content creator",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkN2E0YWI1YmIyNWFiNWYzIiwiaWF0IjoxNjg0NjU2Mzg2LCJleHAiOjE2ODY3Mjk5ODZ9._HwFoBy227vQ7QXThoQ0C0Iklj9ziOfzKjcu-kdRhbY",
+    "comments": {
+      "likes": [],
+      "dislikes": []
+    },
+    "films": {
+      "likes": [],
+      "dislikes": []
+    },
+    "imgPath": ""
+  }
+]
