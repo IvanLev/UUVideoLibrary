@@ -21,7 +21,7 @@ export let videoInitialState = {
   list: [],
   lastNum: 0,
   filter: {
-    genre: "all",
+    genre: "",
     search: ""
   }
 };
