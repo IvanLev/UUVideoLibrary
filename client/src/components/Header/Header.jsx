@@ -97,7 +97,7 @@ function Header() {
                      <Nav.Link>About</Nav.Link>
                   </LinkContainer>
                   <NavDropdown title="Genres" id="basic-nav-dropdown" onSelect={handleFilterClick}>
-                     <NavDropdown.Item eventKey="all">All</NavDropdown.Item>
+                     <NavDropdown.Item eventKey="">All</NavDropdown.Item>
                      {genreList.map(({ name, id }) => (
                         <NavDropdown.Item eventKey={id} key={id}>{name}</NavDropdown.Item>
                      ))}
