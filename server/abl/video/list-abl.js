@@ -7,7 +7,7 @@ let dao = new VideoDao(
 async function ListAbl(req, res) {
     try {
         let { genre, search, count } = req.query;
-        genre = genre || "all";
+        genre = genre || "";
         search = search || "";
         const videoList = await dao.filterVideos(genre, search, count);
         res.json(videoList);

@@ -77,7 +77,7 @@ class VideoDao {
         const searchLower = search.toLowerCase();
         let videoList = await this._loadAllVideos();
         let filterVideoList = videoList.filter(item => {
-            if(genre === "all") {
+            if(!genre) {
                 return item.name.toLowerCase().includes(searchLower);
             } else {
                 return item.name.toLowerCase().includes(searchLower) && item.genreId === genre;
