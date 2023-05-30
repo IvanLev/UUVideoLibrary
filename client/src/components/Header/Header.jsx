@@ -62,7 +62,7 @@ function Header() {
    }
 
    const handleResetFilterClick = () => {
-      sendFilterRequest('', 'all');
+      sendFilterRequest('', '');
    }
 
    const handleLogOut = () => {
