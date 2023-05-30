@@ -30,11 +30,11 @@ function App() {
   const { request } = useHttp()
   const [video, setVideo] = useState(videoInitialState);
 
-  useEffect(() => {
-    request(`${ApiPath.videoList}?count=10`)
-      .then(body => setVideo(state => ({ ...state, ...body })))
-      .catch(error => console.log(error))
-  }, [])
+  // useEffect(() => {
+  //   request(`${ApiPath.videoList}?count=10`)
+  //     .then(body => setVideo(state => ({ ...state, ...body })))
+  //     .catch(error => console.log(error))
+  // }, [])
 
   return (
     <ContextProvider>
@@ -45,6 +45,7 @@ function App() {
               <LandingPage />
             }>
               <Route index element={<Main />} />
+              <Route path="/:genreId" element={<Main />} />
               <Route path={AppRoute.FILMS + AppRoute.$ID} element={<FilmDetails />} />
             </Route>
             <Route path={AppRoute.ABOUT} element={

@@ -1,13 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { ApiPath, AppRoute } from "../../common/constants";
 import { PopupContex, UserContext, VideoContext } from "../../context/context";
 import { useHttp } from "../../hooks/hooks";
 import s from "./Main.module.css";
 
 function Main() {
+   const { genreId } = useParams();
+   const navigate = useNavigate();
    const [allRatings, setAllRatings] = useState([]);
+   const [genreList, setGenreList] = useState([]);
    const { user } = useContext(UserContext);
    const [count, setCount] = useState(10)
    const { video, setVideo } = useContext(VideoContext);
@@ -18,8 +21,34 @@ function Main() {
       request(ApiPath.ratingList)
          .then(res => setAllRatings(res))
          .catch(e => console.log(e))
+   }, []);
+
+   useEffect(() => {
+      request(ApiPath.genreList)
+         .then(body => setGenreList(body))
+         .catch(error => console.log(error))
    }, [])
 
+
+   useEffect(() => {
+      if(!genreList.length) return;
+
+      const genreIsExist = genreList.some(item => item.id === genreId);
+
+      if(!genreIsExist && genreId) {
+         navigate(AppRoute.MAIN);
+         return;
+      } 
+      const genre = genreId || '';
+
+      let params = new URLSearchParams(window.location.search);
+      params.set('genre', genre);
+      params.set('search', video.filter.search);
+      params.set('count', 10);
+      request(`${ApiPath.videoList}?${params}`)
+         .then(res => setVideo(state => ({ ...state, ...res, filter: { ...state.filter, genre } })))
+         .catch(e => console.log(e));
+   }, [genreList, genreId])
 
 
    const deleteVideo = (e) => {
@@ -68,7 +97,9 @@ function Main() {
    return (
       <main className={s.main}>
          <div className={s.content}>
-            <h1 className={s.contentTitle}>Title</h1>
+            <h1 className={s.contentTitle}>
+               { genreId ? genreList.find(item => item.id === genreId)?.name : "All" }
+            </h1>
             <div className={s.films}>
                {
                   video.list.map(({ id, name, preview }) => (

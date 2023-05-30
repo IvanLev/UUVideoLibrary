@@ -1,4 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { LinkContainer } from 'react-router-bootstrap';
 
 import {
@@ -18,6 +20,7 @@ import { useHttp } from '../../hooks/hooks';
 import s from './Header.module.css';
 
 function Header() {
+   const navigate = useNavigate()
    const { request } = useHttp();
    const [genreList, setGenreList] = useState([]);
    const [searchValue, setSearchValue] = useState('');
@@ -58,7 +61,7 @@ function Header() {
    }
 
    const handleFilterClick = (eventKey) => {
-      sendFilterRequest(video.filter.search, eventKey);
+      navigate(`/${eventKey}`);
    }
 
    const handleResetFilterClick = () => {
@@ -99,7 +102,9 @@ function Header() {
                   <NavDropdown title="Genres" id="basic-nav-dropdown" onSelect={handleFilterClick}>
                      <NavDropdown.Item eventKey="">All</NavDropdown.Item>
                      {genreList.map(({ name, id }) => (
-                        <NavDropdown.Item eventKey={id} key={id}>{name}</NavDropdown.Item>
+                        <NavDropdown.Item eventKey={id} key={id}>
+                              {name}
+                        </NavDropdown.Item>
                      ))}
                   </NavDropdown>
                   {user ? (
@@ -167,4 +172,3 @@ function Header() {
 }
 
 export default Header;
-

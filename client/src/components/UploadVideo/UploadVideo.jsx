@@ -76,7 +76,7 @@ function UploadVideo({ handleClosePopup }) {
     >
       <h2 className={s.uploadTitle}>Upload video</h2>
       <Field
-        labelText="Name"
+        labelText="Name *"
         name="name"
         register={register}
         options={option.name}
@@ -87,7 +87,7 @@ function UploadVideo({ handleClosePopup }) {
           htmlFor="genre"
           className={s.label}
         >
-          Genre
+          Genre *
         </label>
         <select
           id="genre"
@@ -106,14 +106,14 @@ function UploadVideo({ handleClosePopup }) {
         </select>
       </div>
       <Field
-        labelText="YouTube video Link"
+        labelText="YouTube video Link *"
         name="link"
         register={register}
         options={option.link}
         errors={errors}
       />
       <Field
-        labelText="Description"
+        labelText="Description (optional)"
         name="description"
         register={register}
         options={option.description}
