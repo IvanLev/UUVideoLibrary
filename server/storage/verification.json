@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "genreId": "f95a2f53e48e7d38",
+    "name": "Interesting video",
+    "link": "https://www.youtube.com/watch?v=tKM44vPHU0U&ab_channel=UlbiTV",
+    "description": "В этом курсе мы разберем базовые концепции серверной разработки. Курс будет предназначен для начинающих в backend разработке. Сделаем небольшое CRUD RestAPI на node.js express. Простой бэкенд на javascript. Уроки по node js для начинающих. Backend на node js для начинающих. Node js уроки для начинающих. Express js уроки. Backend разработка. Backend для начинающих. Продвинутый backend. Backend уроки. Backend на Javascript. ",
+    "creator": "Robert Braun",
+    "id": "fd1ec80712ec43cc",
+    "date": "31.05.2023 09:00:11"
+  }
+]
