@@ -38,5 +38,53 @@
     "videoLink": "https://www.youtube.com/embed/xmvD_EjNE-4",
     "preview": "https://img.youtube.com/vi/xmvD_EjNE-4/0.jpg",
     "id": "d2071c34375f69df"
+  },
+  {
+    "name": "Interesting video",
+    "genreId": "3f9e05bc4aaa380b",
+    "description": "I uploaded my first video",
+    "videoLink": "https://www.youtube.com/embed/YI9yvW-BBQk",
+    "preview": "https://img.youtube.com/vi/YI9yvW-BBQk/0.jpg",
+    "id": "68f642cb48d51170"
+  },
+  {
+    "name": "ReactJS in 1 hour",
+    "genreId": "f95a2f53e48e7d38",
+    "description": "Want to learn more from me? Check out my blog and courses: ",
+    "videoLink": "https://www.youtube.com/embed/SqcY0GlETPk",
+    "preview": "https://img.youtube.com/vi/SqcY0GlETPk/0.jpg",
+    "id": "b9f7b4e0828f6262"
+  },
+  {
+    "name": "NextJS lessons",
+    "genreId": "f95a2f53e48e7d38",
+    "description": "Want to learn more from me? Check out my blog and courses: ",
+    "videoLink": "https://www.youtube.com/embed/VGiphTEApfo",
+    "preview": "https://img.youtube.com/vi/VGiphTEApfo/0.jpg",
+    "id": "30a1783bbfdc5272"
+  },
+  {
+    "name": "Getting Started with Hedera APIs",
+    "genreId": "0258b9979e055af1",
+    "description": "Join us for an interactive codealong workshop designed for developers who are new to the Hedera Ecosystem.  In this workshop, you'll learn how to kickstart your building journey on Hedera by gaining valuable knowledge and skills in working with Hedera APIs. Ryan and Varun will guide you through and give you the opportunity to dive deep into the platform and develop your skills.  By the end of the workshop, you'll have the tools and expertise needed to start building on Hedera with confidence and optimize your submissions!",
+    "videoLink": "https://www.youtube.com/embed/RVotEQ8x6vQ",
+    "preview": "https://img.youtube.com/vi/RVotEQ8x6vQ/0.jpg",
+    "id": "36abf71154669b80"
+  },
+  {
+    "name": "Introduction of function in javascript",
+    "genreId": "3f9e05bc4aaa380b",
+    "description": "Get Interactive and Advanced Courses by Accepted Piece  Choosing a career of your choice may be arduous if you do not have the right specialization or modules. If you are looking forward to exploring new fields like web designing and development, React JS, and gaming development, or want to build premium e-commerce platforms, reach out to Accepted Piece. We help you jumpstart your career with exclusive courses and modules to help you take a plunge. Our full stack developer course, Unity 3D game development course, web design and development course, digital marketing, etc., are the best courses provided in India. Join our classes now to feel the difference. What do We Offer?",
+    "videoLink": "https://www.youtube.com/embed/BvI7EXWXLlI",
+    "preview": "https://img.youtube.com/vi/BvI7EXWXLlI/0.jpg",
+    "id": "0e6f076c3405271b"
+  },
+  {
+    "name": "RTK Query",
+    "genreId": "3f9e05bc4aaa380b",
+    "description": "Want to learn more from me? Check out my blog and courses: ",
+    "videoLink": "https://www.youtube.com/embed/uSwe-5dPrV8",
+    "preview": "https://img.youtube.com/vi/uSwe-5dPrV8/0.jpg",
+    "id": "783d7fe49e94d048"
   }
 ]
